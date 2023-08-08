@@ -18,3 +18,4 @@ export function Avatar(props: AvatarProps) {
 }
 
 // TODO: implement elements on home page. complete homepage.
+// TODO: Add documentation for clean code and good practices used
