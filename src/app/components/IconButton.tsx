@@ -1,8 +1,6 @@
 "use client"
 
-type IconButtonProps = {
-  children: JSX.Element;
-  className?: string;
+interface IconButtonProps extends React.HTMLProps<HTMLButtonElement> {
   onClick?: (e?: React.MouseEvent) => void;
 }
 

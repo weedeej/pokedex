@@ -4,6 +4,7 @@ import Image from "next/image";
 import avatar_head from "@/assets/images/avatar_header.png"
 import { ChevronDown } from "@/assets/icons";
 import { IconButton } from ".";
+import { Avatar } from "./Avatar";
 
 export function Header() {
   return (
@@ -12,9 +13,11 @@ export function Header() {
       <div className="flex flex-row gap-4 items-center">
         <span>Welcome, [UserName]</span>
         <div className="flex flex-row items-center gap-1">
-          <div className="rounded-full overflow-hidden border border-amber-500">
-            <Image alt="avatar_img" src={avatar_head} width={57} height={57} />
-          </div>
+          <Avatar
+            size={57}
+            alt="avatar_head"
+            img={avatar_head}
+          />
           <IconButton onClick={console.log}>
             <ChevronDown />
           </IconButton>
