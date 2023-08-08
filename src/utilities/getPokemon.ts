@@ -29,5 +29,15 @@ export async function getPokemon(pk_id: number) {
   }
   if (!res) return res;
   const {data} = await res.json();
-  
+  const {pokemon_v2_pokemon, pokemon_v2_experience_by_pk} = data;
+  const [pokemon] = pokemon_v2_pokemon;
+  const {pokemon_v2_pokemontypes, name} = pokemon;
+  const {level} = pokemon_v2_experience_by_pk;
+
+  return {
+    id: pk_id,
+    name,
+    types: pokemon_v2_pokemontypes.map((pkType: { pokemon_v2_type: { name: any; }; }) => pkType.pokemon_v2_type.name),
+    level
+  } as PkInfo
 }
