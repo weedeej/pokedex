@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { IconButton } from './components'
+import { FilterIcon, GridViewIcon, ListViewIcon } from '@/assets/icons'
 
 export default function Home() {
   return (
@@ -6,7 +8,15 @@ export default function Home() {
       <div className="flex flex-row z-10 max-w-5xl w-full items-center justify-between font-inter text-sm">
         <p className="font-semibold text-2xl">Choose a Pokemon</p>
         <div className='flex flex-row'>
-          
+          <IconButton>
+            <FilterIcon/>
+          </IconButton>
+          <IconButton>
+            <ListViewIcon/>
+          </IconButton>
+          <IconButton>
+            <GridViewIcon/>
+          </IconButton>
         </div>
       </div>
       <div className="grid max-w-5xl w-full mb-0 grid-cols-4 text-left">
