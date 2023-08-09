@@ -1,7 +1,44 @@
 import Image from 'next/image'
-import { IconButton } from './components'
+import { Card, IconButton } from './components'
 import { FilterIcon, GridViewIcon, ListViewIcon } from '@/assets/icons'
-import { bulbasaur } from '@/assets/images/pokemon'
+import { bulbasaur, butterfree, charmander, espeon, flareon, pikachu, squirtle, sylveon } from '@/assets/images/pokemon'
+
+const POKEMON_WITH_IMAGES = [
+  {
+    pk_id: 136,
+    img: flareon,
+  },
+  {
+    pk_id: 25,
+    img: pikachu,
+  },
+  {
+    pk_id: 7,
+    img: squirtle,
+    title: "Squirtle",
+    subtitle: "#3"
+  },
+  {
+    pk_id: 4,
+    img: charmander,
+  },
+  {
+    pk_id: 1,
+    img: bulbasaur,
+  },
+  {
+    pk_id: 700,
+    img: sylveon,
+  },
+  {
+    pk_id: 196,
+    img: espeon,
+  },
+  {
+    pk_id: 12,
+    img: butterfree,
+  },
+]
 
 export default function Home() {
   return (
@@ -20,77 +57,12 @@ export default function Home() {
           </IconButton>
         </div>
       </div>
-      <div className="grid max-w-5xl w-full mb-0 grid-cols-4 text-left">
-        <div className="group rounded overflow-hidden">
-          <Image alt="card_bulbasaur" src={bulbasaur} width={216} height={259} loading="lazy"/>
-        </div>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="grid max-w-5xl w-full mb-0 grid-cols-4 text-left gap-y-10">
+        {
+          POKEMON_WITH_IMAGES.map((pk) => (
+            <Card key={`pk_card_${pk.pk_id}`} {...pk}/>
+          ))
+        }
       </div>
     </main>
   )
