@@ -4,7 +4,7 @@ import { FilterIcon, GridViewIcon, ListViewIcon } from '@/assets/icons'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center py-12 gap-12">
+    <main className="flex min-h-screen flex-col items-center py-12 gap-12 text-white">
       <div className="flex flex-row z-10 max-w-5xl w-full items-center justify-between text-sm">
         <p className="font-semibold text-2xl">Choose a Pokemon</p>
         <div className='flex flex-row'>
