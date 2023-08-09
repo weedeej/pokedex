@@ -19,11 +19,72 @@ const BG_ELEMENTS = [
     width: 420,
     height: 420,
     style: {
-      top: "216.44",
-      left: "1104px",
-      rotate: "-23.49 deg"
+      top: "0px",
+      right: "-12em",
+      rotate: "-23.49deg"
     }
-  }
+  },
+  {
+    src: pokeBall,
+    width: 179.11,
+    height: 179.11,
+    style: {
+      bottom: "14em",
+      left: "-3em",
+      rotate: "19.9deg"
+    }
+  },
+  {
+    src: el122,
+    width: 65.2,
+    height: 89.02,
+    style: {
+      bottom: "12em",
+      left: "4em",
+    }
+  },
+  {
+    src: el123,
+    width: 65.2,
+    height: 89.02,
+    style: {
+      bottom: "27em",
+      left: "0.5em",
+      rotate: "8.37deg"
+    }
+  },
+  {
+    src: el120,
+    width: 40.02,
+    height: 51,
+    style: {
+      bottom: "35em",
+      left: "9em",
+      rotate: "20.05deg"
+    }
+  },
+  {
+    src: el130,
+    width: 33.02,
+    height: 37.89,
+    style: {
+      bottom: "23em",
+      left: "11em",
+      rotate: "20.05deg"
+    }
+  },
+  {
+    src: el126,
+    width: 33.02,
+    height: 37.89,
+    style: {
+      width: 36.78,
+      height: 43.60,
+      bottom: "12em",
+      left: "16em",
+      rotate: "-25.7deg"
+    }
+  },
 ]
 
 export default function RootLayout({
