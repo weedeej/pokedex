@@ -129,7 +129,7 @@ export default function RootLayout({
         <div className="relative">
           {
             BG_ELEMENTS.map(({style, ...rest}, idx) => (
-              <Image {...rest} style={{position: "absolute", zIndex: -2, ...style}} alt={`bg_el_${idx}`} loading='lazy'/>
+              <Image key={`bg_el_${idx}`} {...rest} style={{position: "absolute", zIndex: -2, ...style}} alt={`bg_el_${idx}`} loading='lazy'/>
             ))
           }
           

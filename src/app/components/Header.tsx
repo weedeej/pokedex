@@ -3,8 +3,7 @@
 import Image from "next/image";
 import avatar_head from "@/assets/images/avatar_header.png"
 import { ChevronDown } from "@/assets/icons";
-import { IconButton } from ".";
-import { Avatar } from "./Avatar";
+import { IconButton, Avatar } from ".";
 
 export function Header() {
   return (
