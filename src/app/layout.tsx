@@ -50,7 +50,6 @@ const BG_ELEMENTS = [
     style: {
       bottom: "27em",
       left: "0.5em",
-      rotate: "8.37deg"
     }
   },
   {
@@ -60,7 +59,6 @@ const BG_ELEMENTS = [
     style: {
       bottom: "35em",
       left: "9em",
-      rotate: "20.05deg"
     }
   },
   {
@@ -70,19 +68,51 @@ const BG_ELEMENTS = [
     style: {
       bottom: "23em",
       left: "11em",
-      rotate: "20.05deg"
     }
   },
   {
     src: el126,
-    width: 33.02,
-    height: 37.89,
+    width: 36.78,
+    height: 43.60,
     style: {
-      width: 36.78,
-      height: 43.60,
       bottom: "12em",
       left: "16em",
-      rotate: "-25.7deg"
+    }
+  },
+  {
+    src: el121,
+    width: 59,
+    height: 103,
+    style: {
+      bottom: "12em",
+      right: "12em",
+    }
+  },
+  {
+    src: el125,
+    width: 34,
+    height: 52,
+    style: {
+      bottom: "18em",
+      right: "1em",
+    }
+  },
+  {
+    src: el128,
+    width: 38,
+    height: 56,
+    style: {
+      bottom: "24em",
+      right: "8em",
+    }
+  },
+  {
+    src: el127,
+    width: 27,
+    height: 30,
+    style: {
+      bottom: "34em",
+      right: "3em",
     }
   },
 ]
@@ -99,7 +129,7 @@ export default function RootLayout({
         <div className="relative">
           {
             BG_ELEMENTS.map(({style, ...rest}, idx) => (
-              <Image {...rest} style={{position: "absolute", ...style}} alt={`bg_el_${idx}`} loading='lazy'/>
+              <Image {...rest} style={{position: "absolute", zIndex: -2, ...style}} alt={`bg_el_${idx}`} loading='lazy'/>
             ))
           }
           
