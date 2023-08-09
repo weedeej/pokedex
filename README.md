@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PokeDex
+The goal of this coding exercise is to demonstrate proficiency in creating a ReactJS web application by converting a provided Figma design into a functional, rich-quality codebase. The application will integrate with the PokeAPI to dynamically populate content. The implementation will adhere to React best practices, incorporate web performance optimization techniques, and include a testing environment with appropriate tests.
 
 ## Getting Started
 
@@ -14,18 +15,16 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Developer's Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- This project uses NextJS 13 as foundation.
+- Didn't use `graphql-codegen` as the project's complexity is not worthy of `graphql-codegen`'s flexibility. It will instead make the bundle larger.
+It will also help Beginner Devs and those who are not familiar with said tool to understand the codebase much easier greatly impacting maintainability.
+- I used PokeAPI's GraphQL url for node-fetch instead of it's RestAPI as I can fetch multiple data with just 1 request. This applies to Pokemon Data and it's level.
+- I am trying to minimize external libraries used in this project to lessen the bundle size.
+- Didn't 100% follow Figma's padding/gaps as some looks better balanced. Please see [This](https://www.figma.com/file/PcBBsI7qQP8qlgwW5OzOOr/Pokedex?type=design&node-id=44-3653&mode=design&t=TiBiz5FcGrqpPXye-0) grid view. The "Choose a Pokemon" is not equally padded.
+- Created reusable components for repeating usages of similar designed component. This helps a lot in terms of clean code and maintainability. 
+- Used vscode's quicktype extension to easily create a type for PokeAPI's result.
 
 ## Deploy on Vercel
 
