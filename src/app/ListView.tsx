@@ -1,39 +1,43 @@
 import { PkInfo } from "@/types"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { Avatar } from "./components";
+import avatar_dummy from "@/assets/images/avatar_dummy.png"
+import { toTitleCase } from "@/utilities";
 
 type ListViewProps = {
-  list: (PkInfo & {img: StaticImport | null})[];
+  list: (PkInfo & { img: StaticImport | null })[];
 }
 
 export function ListView(props: ListViewProps) {
-  const {list} = props;
+  const { list } = props;
 
   return (
-    <table className="table-fixed w-full max-w-[1024px] bg-gray-700">
+    <table className="table-auto w-full max-w-[1024px] bg-gray-700 divide-y">
       <thead>
-        <tr>
-          <th>#</th>
-          <th>Pokemon</th>
-          <th>Type</th>
-          <th>Level</th>
+        <tr className="">
+          <th className="p-2 w-[5%]">#</th>
+          <th className="p-2 w-[5%]"></th>
+          <th className="p-2 w-[30%] text-start">Pokemon</th>
+          <th className="p-2 w-[30%] text-start">Type</th>
+          <th className="p-2 w-[30%] text-start">Level</th>
         </tr>
       </thead>
-      <tbody className="">
-        <tr>
-          <td></td>
-          <td>Malcolm Lockyer</td>
-          <td>1961</td>
-        </tr>
-        <tr>
-          <td>Witchy Woman</td>
-          <td>The Eagles</td>
-          <td>1972</td>
-        </tr>
-        <tr>
-          <td>Shining Star</td>
-          <td>Earth, Wind, and Fire</td>
-          <td>1975</td>
-        </tr>
+      <tbody className="divide-y">
+        {
+          list.map(({ name, id, level, types, img }, index) => (
+            <tr>
+              <td className="p-2 w-[5%]" >{index + 1}</td>
+              <td className="p-2 w-[5%]">
+                <Avatar size={32} alt={`avatar_${id}`} img={img ?? avatar_dummy} className="border-gray-400"/>
+              </td>
+              <td className="text-start p-2 w-[30%]">
+                {name}
+              </td>
+              <td className="p-2 justify-center w-[30%]">{toTitleCase(types[0])}</td>
+              <td className="p-2 justify-center w-[30%]">Level {level}</td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   )
