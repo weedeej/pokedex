@@ -1,56 +1,19 @@
-
 import { bulbasaur, butterfree, charmander, espeon, flareon, pikachu, squirtle, sylveon } from '@/assets/images/pokemon'
 import { Card } from './components'
+import { PkInfo } from '@/types'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+type GridViewProps = {
+  list: (PkInfo & {img: StaticImport | null})[];
+}
 
-const POKEMON_WITH_IMAGES = [
-  {
-    pk_id: 136,
-    img: flareon,
-    title: "Flareon",
-  },
-  {
-    pk_id: 25,
-    img: pikachu,
-    title: "Pikachu",
-  },
-  {
-    pk_id: 7,
-    img: squirtle,
-    title: "Squirtle",
-  },
-  {
-    pk_id: 4,
-    img: charmander,
-    title: "Charmander",
-  },
-  {
-    pk_id: 1,
-    img: bulbasaur,
-    title: "Bulbasaur",
-  },
-  {
-    pk_id: 700,
-    img: sylveon,
-    title: "Sylveon",
-  },
-  {
-    pk_id: 196,
-    img: espeon,
-    title: "Espeon",
-  },
-  {
-    pk_id: 12,
-    img: butterfree,
-    title: "Butterfree",
-  },
-]
+export function GridView(props: GridViewProps) {
+  const {list} = props;
 
-export function GridView() {
   return (
     <div className="grid max-w-5xl w-full mb-0 grid-cols-4 text-left gap-y-10">
         {
-          POKEMON_WITH_IMAGES.map((pk, idx) => (
-            <Card key={`pk_card_${pk.pk_id}`} {...pk} subtitle={`#${idx+1}`}/>
+          list.map(({id, name, img}, idx) => (
+            <Card key={`pk_card_${id}`} title={name} subtitle={`#${idx + 1}`} pk_id={id} img={img!}/>
           ))
         }
       </div>
