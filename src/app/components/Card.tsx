@@ -18,7 +18,7 @@ export function Card(props: CardProps) {
   function toggleHover() {
     setIsHovered((prev) => !prev)
   }
-  console.log(!!title || !!subtitle)
+  
   return (
     <div className="group rounded overflow-hidden relative h-[259px] w-[216px] cursor-pointer" onMouseLeave={toggleHover}  onMouseEnter={toggleHover}>
       {
