@@ -15,7 +15,7 @@ export function ListView(props: ListViewProps) {
     <table className="table-auto w-full max-w-[1024px] bg-gray-700 divide-y">
       <thead>
         <tr className="">
-          <th className="p-2 w-[5%]">#</th>
+          <th className="p-2 w-[5%] text-start">#</th>
           <th className="p-2 w-[5%]"></th>
           <th className="p-2 w-[30%] text-start">Pokemon</th>
           <th className="p-2 w-[30%] text-start">Type</th>
@@ -26,7 +26,7 @@ export function ListView(props: ListViewProps) {
         {
           list.map(({ name, id, level, types, img, base_experience }, index) => (
             <tr>
-              <td className="p-2 w-[5%]" >{index + 1}</td>
+              <td className="p-2 w-[5%] text-start" >{index + 1}</td>
               <td className="p-2 w-[5%]">
                 <Avatar size={32} alt={`avatar_${id}`} img={img ?? avatar_dummy} className="border-gray-400"/>
               </td>
