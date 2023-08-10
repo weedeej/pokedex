@@ -3,6 +3,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Avatar, IconButton } from "./components";
 import avatar_dummy from "@/assets/images/avatar_dummy.png"
 import { toTitleCase } from "@/utilities";
+import { ChevronLeft, ChevronRight } from "@/assets/icons";
 
 type ListViewProps = {
   list: (PkInfo & { img: StaticImport | null })[];
@@ -43,7 +44,12 @@ export function ListView(props: ListViewProps) {
       </table>
       <small className="text-end w-full">Showing 1-10 of 20</small>
       <div className="flex flex-row">
-        <IconButton></IconButton>
+        <IconButton>
+          <ChevronLeft/>
+        </IconButton>
+        <IconButton>
+          <ChevronRight/>
+        </IconButton>
       </div>
     </div>
   )
