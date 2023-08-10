@@ -24,7 +24,7 @@ export function ListView(props: ListViewProps) {
       </thead>
       <tbody className="divide-y">
         {
-          list.map(({ name, id, level, types, img }, index) => (
+          list.map(({ name, id, level, types, img, base_experience }, index) => (
             <tr>
               <td className="p-2 w-[5%]" >{index + 1}</td>
               <td className="p-2 w-[5%]">
@@ -34,7 +34,7 @@ export function ListView(props: ListViewProps) {
                 {name}
               </td>
               <td className="p-2 justify-center w-[30%]">{toTitleCase(types[0])}</td>
-              <td className="p-2 justify-center w-[30%]">Level {level}</td>
+              <td className="p-2 justify-center w-[30%]">Level {level} ({base_experience} exp)</td>
             </tr>
           ))
         }

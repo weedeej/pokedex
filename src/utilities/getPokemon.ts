@@ -13,6 +13,7 @@ export async function getPokemon(pk_id: number) {
       pokemon: pokemon_v2_pokemon(where: {id: {_eq: $pk_id}}, limit: 1) {
         id
         name
+        base_experience
         types: pokemon_v2_pokemontypes(where: {pokemon_id: {_eq: $pk_id}}) {
           type_id
           pokemon_v2_type {
@@ -33,12 +34,13 @@ export async function getPokemon(pk_id: number) {
   const {data} = (await res.json()) as APIResponse;
   const {pokemon:pokemonList, pk_level} = data;
   const [pokemon] = pokemonList;
-  const {types, name} = pokemon;
+  const {types, name, base_experience} = pokemon;
   const {level} = pk_level ?? {level: 1};
 
   return {
     id: pk_id,
     name,
+    base_experience,
     types: types.map((pkType: { pokemon_v2_type: { name: any; }; }) => pkType.pokemon_v2_type.name),
     level
   } as PkInfo
@@ -62,6 +64,7 @@ interface PkLevel {
 interface Pokemon {
   id:    number;
   name:  string;
+  base_experience: number;
   types: Type[];
 }
 
