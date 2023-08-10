@@ -34,7 +34,7 @@ export async function getPokemon(pk_id: number) {
   const {pokemon:pokemonList, pk_level} = data;
   const [pokemon] = pokemonList;
   const {types, name} = pokemon;
-  const {level} = pk_level ?? 0;
+  const {level} = pk_level ?? {level: 1};
 
   return {
     id: pk_id,
