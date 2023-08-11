@@ -25,6 +25,11 @@ It will also help Beginner Devs and those who are not familiar with said tool to
 - Didn't 100% follow Figma's padding/gaps as some looks better balanced. Please see [This](https://www.figma.com/file/PcBBsI7qQP8qlgwW5OzOOr/Pokedex?type=design&node-id=44-3653&mode=design&t=TiBiz5FcGrqpPXye-0) grid view. The "Choose a Pokemon" is not equally padded.
 - Created reusable components for repeating usages of similar designed component. This helps a lot in terms of clean code and maintainability. 
 - Used vscode's quicktype extension to easily create a type for PokeAPI's result.
+- Only added 10 Pokemon as only 10 has provided data such as image.
+- Functionality for filter isn't included due to example how it should work isn't provided. need to clarify to designer.
+- Pagination functionality isn't implemented as no more data to show past 10 as there are no provided offset such as where it started.
+The only known constraint is `limit: 10`.
+- Some data on figma aren't accurate OR does not match the one in `pokeapi.co`. Used the one provided in live data instead.
 
 ## Deploy on Vercel
 
