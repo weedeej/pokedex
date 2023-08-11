@@ -2,7 +2,7 @@
 
 import avatar_head from "@/assets/images/avatar_header.png"
 import { ChevronDown } from "@/assets/icons";
-import { IconButton, Avatar, Popup } from ".";
+import { IconButton, Avatar, Popup, MenuItem } from ".";
 import { useRef, useState } from "react";
 
 export function Header() {
@@ -21,9 +21,9 @@ export function Header() {
         anchor={dropdownRef}
         position="bottom-left"
         content={(<>
-          <div className="text-red-500 px-4 flex items-center hover:bg-gray-200 w-full cursor-pointer" onClick={onLogout}>
-            Log out
-          </div>
+          <MenuItem onClick={onLogout}>
+            <span className="text-red-500">Log out</span>
+          </MenuItem>
         </>)}
       />
       <h2 className="text-amber-400 text-4xl font-bold">Pokedex</h2>
