@@ -43,10 +43,14 @@ export function ListView(props: ListViewProps) {
         </tbody>
       </table>
       <small className="text-end w-full">Showing 1-10 of 20</small>
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center gap-4 justify-center">
         <IconButton>
           <ChevronLeft/>
         </IconButton>
+        <div className="flex flex-row gap-2">
+          <div className="rounded w-8 h-8 flex justify-center items-center p-2 text-black bg-[#FFD12D]">1</div>
+          <div className="rounded w-8 h-8 flex justify-center items-center p-2 text-black bg-white">2</div>
+        </div>
         <IconButton>
           <ChevronRight/>
         </IconButton>
